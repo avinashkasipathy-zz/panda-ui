@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import SecondComponents from './secondcomponent'
+import Button from 'slds-for-react/button'
 
 class FirstComponents extends React.Component {
   constructor(props) {
@@ -15,7 +16,7 @@ class FirstComponents extends React.Component {
   }
 
   onClickFoo () {
-    var child = (<div> I am child Foo </div>)
+    var child = (<div key="childFoo"> I am child Foo </div>)
     this.setState({
       children: child
     })
@@ -23,7 +24,7 @@ class FirstComponents extends React.Component {
   }
 
   onClickBuzz () {
-    var child = (<div> I am child Buzz </div>)
+    var child = (<div key="childbuzz"> I am child Buzz </div>)
     this.setState({
       children: child
     })
@@ -32,10 +33,7 @@ class FirstComponents extends React.Component {
   render() {
     return (
       <div>
-          <button onClick={this.onClickFoo}>Foo</button>
-          <button onClick={this.onClickBuzz}>Buzz</button>
-          {this.state.children}
-          <SecondComponents />
+          <Button text="Fucking Awesome" theme="neutral" />
       </div>
     )
   }

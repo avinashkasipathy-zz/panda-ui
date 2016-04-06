@@ -25,7 +25,9 @@ module.exports = {
         presets: ["es2015", "stage-1", "react"]
       },
       include: [
-        path.join(__dirname, '/src')
+        path.join(__dirname, '/src'),
+        path.join(__dirname, 'node_modules/slds-for-react'),
+        path.join(__dirname, 'node_modules/slds-for-js-core')
       ]
     }]
   },

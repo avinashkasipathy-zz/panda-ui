@@ -19,7 +19,8 @@
     "redux": "~3.3.1",
     "redux-actions": "~0.9.1",
     "redux-requests": "~1.0.2",
-    "redux-thunk": "~1.0.3"
+    "redux-thunk": "~1.0.3",
+    "slds-for-react": "git+ssh://git@github.com/salesforce-ux/slds-for-react.git#v0.0.15-es"
   },
   "devDependencies": {
     "babel-core": "^6.7.2",
