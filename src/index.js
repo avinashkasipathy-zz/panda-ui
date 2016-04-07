@@ -7,33 +7,15 @@ class FirstComponents extends React.Component {
   constructor(props) {
     super(props)
     this.render = this.render.bind(this)
-    this.onClickFoo = this.onClickFoo.bind(this)
-    this.onClickBuzz = this.onClickBuzz.bind(this)
-
     this.state = {
       children: null
     }
   }
 
-  onClickFoo () {
-    var child = (<div key="childFoo"> I am child Foo </div>)
-    this.setState({
-      children: child
-    })
-
-  }
-
-  onClickBuzz () {
-    var child = (<div key="childbuzz"> I am child Buzz </div>)
-    this.setState({
-      children: child
-    })
-  }
-
   render() {
     return (
       <div>
-          <Button text="Fucking Awesome" theme="neutral" />
+          <Button text="Fucking Awesome" className="slds-button" theme="neutral" />
       </div>
     )
   }
