@@ -1,24 +1,26 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
-import SecondComponents from './secondcomponent'
-import Button from 'slds-for-react/button'
+import { render } from 'react-dom'
+import { Provider } from 'react-redux'
 
-class FirstComponents extends React.Component {
-  constructor(props) {
-    super(props)
-    this.render = this.render.bind(this)
-    this.state = {
-      children: null
-    }
-  }
 
-  render() {
-    return (
-      <div>
-          <Button text="Fucking Awesome" className="slds-button" theme="neutral" />
-      </div>
-    )
-  }
-}
+import config from './config'
 
-ReactDOM.render(<FirstComponents />, document.getElementById('panda-ui'))
+import { fetchData } from './actions'
+
+
+// import FirstComponents from './firstcomponent'
+// import SecondComponents from './secondcomponent'
+import GridComponent from './gridcomponent'
+
+fetchData()
+
+var store = config();
+
+render(
+  <Provider store={store.pandastore}>
+    <div>
+      <GridComponent />
+    </div>
+  </Provider>, 
+  document.getElementById('panda-ui')
+)
