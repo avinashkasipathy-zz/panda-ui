@@ -1,14 +1,19 @@
 import React from 'react'
 import { fetchData } from './actions'
+import { connect } from 'react-redux'
 
 class GridComponent extends React.Component {
   render() {
-    console.log("Avi");
-    console.log(fetchData());
     return (
-      <div> Grid Component </div>
+      <div> Grid Component {this.props.testing}</div>
     )
   }
 }
 
-export default GridComponent
+const mapStateToProps = (state, ownProps) => {
+  return {
+    testing: JSON.stringify(state.testing)
+  }
+}
+
+export default connect(mapStateToProps)(GridComponent)

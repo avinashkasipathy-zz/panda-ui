@@ -7,14 +7,18 @@ import config from './config'
 
 import { fetchData } from './actions'
 
-
-// import FirstComponents from './firstcomponent'
-// import SecondComponents from './secondcomponent'
 import GridComponent from './gridcomponent'
 
-fetchData()
-
 var store = config();
+
+store.pandastore.dispatch({
+  "type": "GET_PANDAS",
+  "testing": "just get around this"
+});
+
+window.pandastore = store.pandastore;
+
+fetchData(store.pandastore.dispatch);
 
 render(
   <Provider store={store.pandastore}>

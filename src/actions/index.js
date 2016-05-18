@@ -1,9 +1,36 @@
-import featch from 'isomorphic-fetch'
+import fetch from 'isomorphic-fetch'
 
-export const fetchData = () => {
+export const fetchData = (dispatch) => {
 
-  fetch('http://www.reddit.com/r/news.json')
+  fetch('http://localhost:3000', {
+    mode: 'no-cors'
+  })
   .then(response => {
     return response.json();
   })
+  .then (data => {
+    console.log('fetch success', data);
+    dispatch({
+      type: 'FETCH_SUCCESS',
+      testing: data
+    })
+  })
 }
+
+// import featch from 'rest'
+
+// export const fetchData = (dispatch) => {
+
+//   fetch('http://localhost:3000',{
+//     mode: 'no-cors'})
+//   .then(response => {
+//     return response.json();
+//   })
+//   .then (data => {
+//     console.log('fetch success', data);
+//     dispatch({
+//       type: 'FETCH_SUCCESS',
+//       testing: data
+//     })
+//   })
+// }
