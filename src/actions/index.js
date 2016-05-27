@@ -1,36 +1,17 @@
-import fetch from 'isomorphic-fetch'
+import request from 'superagent'
 
 export const fetchData = (dispatch) => {
-
-  fetch('http://localhost:3000', {
-    mode: 'no-cors'
-  })
-  .then(response => {
-    return response.json();
-  })
-  .then (data => {
-    console.log('fetch success', data);
-    dispatch({
-      type: 'FETCH_SUCCESS',
-      testing: data
-    })
+  request
+  .get('http://localhost:3000')
+  .end((error, response) => {
+    if(error){
+      console.log(error);
+    }else {
+      console.log(response.body);
+      dispatch({
+        type: 'FETCH_SUCCESS',
+        testing: response.body
+      })
+    }
   })
 }
-
-// import featch from 'rest'
-
-// export const fetchData = (dispatch) => {
-
-//   fetch('http://localhost:3000',{
-//     mode: 'no-cors'})
-//   .then(response => {
-//     return response.json();
-//   })
-//   .then (data => {
-//     console.log('fetch success', data);
-//     dispatch({
-//       type: 'FETCH_SUCCESS',
-//       testing: data
-//     })
-//   })
-// }

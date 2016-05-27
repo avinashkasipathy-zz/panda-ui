@@ -11,12 +11,12 @@
   "dependencies": {
     "express": "^4.13.4",
     "history": "~1.17.0",
-    "isomorphic-fetch": "^2.2.1",
     "react": "~0.14.7",
     "react-dom": "~0.14.7",
     "react-redux": "^4.4.5",
     "redux": "^3.5.2",
-    "slds-for-react": "git+ssh://git@github.com/salesforce-ux/slds-for-react.git#v0.0.15-es"
+    "slds-for-react": "git+ssh://git@github.com/salesforce-ux/slds-for-react.git#v0.0.15-es",
+    "superagent": "^2.0.0-alpha.3"
   },
   "devDependencies": {
     "babel-core": "^6.7.2",
